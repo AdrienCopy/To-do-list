@@ -40,7 +40,7 @@ function createTaskElement(taskObject) {
     checkbox.checked = taskObject.checked;
     checkbox.addEventListener('change', function() {
         taskObject.checked = checkbox.checked;
-        updateTaskStyle(li, taskObject.checked);
+        updateTaskStyle(p, taskObject.checked);
         save();
     });
 
@@ -57,18 +57,18 @@ function createTaskElement(taskObject) {
     li.appendChild(checkbox);
     li.appendChild(deleteBtn);
 
-    updateTaskStyle(li, taskObject.checked);
+    updateTaskStyle(p, taskObject.checked);
 
     return li;
 }
 
-function updateTaskStyle(li, isChecked) {
+function updateTaskStyle(p, isChecked) {
     if (isChecked) {
-        li.style.color = 'green';
-        li.style.textDecoration = 'line-through';
+        p.style.color = 'green';
+        p.style.textDecoration = 'line-through';
     } else {
-        li.style.color = '';
-        li.style.textDecoration = '';
+        p.style.color = '';
+        p.style.textDecoration = '';
     }
 }
 
